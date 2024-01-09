@@ -18,3 +18,10 @@
     Se ne avete tempo e voglia, provate a:
     1. raccogliere le informazioni dall'utente usando form, input, button in pagina invece che coi prompt.
     2. Stampare i risultati in pagina, invece che in console
+
+
+    ### Scaletta Es. Palindroma
+        1. Chiedo all'utente di inserire una parola da controllare
+        2. Dichiaro la funzione per controllare che una parola passata a parametro sia una palindroma
+        3. Richiamo la funzione passandole per argomento la parola inserita dall'utente
+        4. Stampo il risultato.
