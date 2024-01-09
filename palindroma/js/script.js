@@ -1,5 +1,10 @@
 const word = prompt('Inserisci una parola per verificare che sia palindroma: ').trim();
 
+
+/**
+ * Check if a word is a palindrome and print a console message
+ * @param {string} word //Word to be tested 
+ */
 function checkPalindrome(word) {
     let reverseWord = '';
     let result = 'La parola inserita non è un palindromo';
