@@ -25,3 +25,13 @@
         2. Dichiaro la funzione per controllare che una parola passata a parametro sia una palindroma
         3. Richiamo la funzione passandole per argomento la parola inserita dall'utente
         4. Stampo il risultato.
+
+    ### Scaletta Es. Pari e dispari
+        1. Chiedo all'utente di scegliere tra pari e dispapri
+        2. Chiedo all'utente di scegliere un numero da 1 a 5
+        3. Dichiaro una funzione per generare un numero casuale 
+        4. Dichiaro una funzione per verificare se un numero sia pari o dispari
+        5. Richiamo la funzione per generare il numero casuale in un range da 1 a 5
+        6. Faccio la somma con il numero scelto dall'utente
+        7. Verifico se la somma sia pari o dispari
+        8. Stampo il risultato 
