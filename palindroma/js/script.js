@@ -17,12 +17,16 @@ function checkPalindrome(word) {
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    let message = 'La parola non è palindroma';
     const word = inputText.value;
+
+    // ! Validazione
     if (!word) {
         alert('Devi inserire una parola!');
         return;
     }
+    // ! -----------
+
+    let message = 'La parola non è palindroma';
     displayResult.classList.remove('d-none');
     if (checkPalindrome(word)) message = 'La parola è palindroma';
     displayResult.innerText = message;
