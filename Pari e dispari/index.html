@@ -5,9 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pari e dispari</title>
+
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css'
+        integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=='
+        crossorigin='anonymous' />
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <form action="" id="form">
+        <div class="container d-flex justify-content-center align-items-center flex-column">
+            <h1>Gioca a pari o dispari!</h1>
+            <label for="menu" class="form-label">Scegli tra pari e dispari</label>
+            <select id='menu' class="form-select mb-4" aria-label="Default select example">
+                <option selected value="pari">Pari</option>
+                <option value="dispari">Dispari</option>
+            </select>
+            <label for="user-number" class="form-label">Scegli un numero tra 1 e 5</label>
+            <input id="user-number" class="mb-4" type="number" min="1" max="5" value="5">
+            <button id="button" class="mb-4">Conferma</button>
+
+            <p id="info" class="d-none text-center"></p>
+
+            <h2 id="result" class="d-none"></h2>
+        </div>
+    </form>
+
 
 
     <script src="js/script.js"></script>

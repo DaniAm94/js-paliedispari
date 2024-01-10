@@ -1,13 +1,11 @@
-// L'utente sceglie tra pari e dispari
-const userChoice = prompt('Scegli tra pari e dispari: ').trim() || 'pari';
-console.log('Hai scelto:', userChoice);
+//  Recupero gli elementi dal DOM
+const form = document.getElementById('form');
+const menu = document.getElementById('menu');
+const number = document.getElementById('user-number');
+const displayInfo = document.getElementById('info');
+const displayResult = document.getElementById('result');
 
-
-// L'utente sceglie un numero da 1 a 5
-const userNumber = parseInt(prompt('Scegli un numero da uno a 5')) || 5;
-console.log('Il tuo numero: ', userNumber);
-
-
+// TODO Funzioni
 /**
  * Calculate a random number in a specific range (max can be excluded)
  * @param {number} min lower bound 
@@ -44,18 +42,44 @@ function isEven(number) {
     return result;
 }
 
-// Richiamo la funzione da me creata per generare un numero casuale da 1 a 5
-const randomNumber = getRandomNumber(1, 5);
-console.log('Numero casuale generato (tra 1 e 5):', randomNumber);
+
+// TODO Esecuzione
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const userChoice = menu.value;
+    const userNumber = parseInt(number.value);
+
+    // ! Validazione
+    if (userChoice !== 'pari' && userChoice !== 'dispari') {
+        displayResult.innerText = 'Devi scegliere tra pari o dispari!';
+        displayInfo.classList.add('d-none');
+        return;
+    }
+    if (isNaN(userNumber) || userNumber < 1 || userNumber > 5) {
+        displayResult.innerText = 'Devi scegliere un numero compreso tra 1 e 5!';
+        displayInfo.classList.add('d-none');
+        return;
+    }
+    // !----------------
 
 
-// Calcolo la somma del numero scelto dall'utente e il numero casuale
-const sum = userNumber + randomNumber;
-console.log('Somma: ', sum);
+    displayInfo.classList.remove('d-none');
+    displayResult.classList.remove('d-none');
 
-// Verifico che la somma sia pari o dispari e stampo il risultato
-if (isEven(sum) === userChoice) {
-    console.log('Hai vinto!');
-} else {
-    console.log('Hai perso!');
-} 
+    // Richiamo la funzione da me creata per generare un numero casuale da 1 a 5
+    const randomNumber = getRandomNumber(1, 5);
+
+
+    // Calcolo la somma del numero scelto dall'utente e il numero casuale
+    const sum = userNumber + randomNumber;
+    let messaggio = 'Hai perso!';
+
+    // Verifico che la somma sia pari o dispari e stampo il risultato
+    if (isEven(sum) === userChoice) {
+        messaggio = 'Hai vinto!';
+    }
+    displayInfo.innerText = `Il mio numero: ${randomNumber}
+    Somma: ${sum}`;
+    displayResult.innerText = messaggio;
+})       
